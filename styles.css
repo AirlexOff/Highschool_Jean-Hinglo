@@ -1,126 +1,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
 
-  body{
-    background-color: #080a0e;
-    background-size: 400% 400%;
-    position: relative;
-    animation: change 8s ease-in-out infinite;
-    font-family: "Poppins";
-    line-height: 1.5;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #080a0e;
+  background-size: 400% 400%;
+  font-family: "Poppins";
+  line-height: 1.5;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 8%;
+  background-color: #26a75b;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a{
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 1em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav__links{
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li{
+  padding: 0px 30px;
+  list-style-type: none;
+}
+
+.nav__links li a{
+  display: flex;
+  text-decoration: none;
+  text-align: center;
+  transition: color 0.2s ease 0s;
+}
+
+.nav__links li a:hover{
+  border-bottom: #ffffff solid 2px;
+}
+
+.cta{
+  padding: 9px 25px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover{
+  background-color: #131313;
+  color: #ffffff;
+}
+
+.menu{
+  display: none;
+}
+
+.overlay{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #131313;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active{
+  width: 100%;
+}
+
+.overlay__content{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a{
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus{
+  color: #0088a9;
+}
+
+.overlay .close{
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+@media screen and (max-height: 450px){
+  .overlay a{
+    font-size: 20px;
   }
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 8%;
-    background-color: #131313;
+  .overlay .close{
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
   }
-  .nav__links a,
-  .cta,
-  .overlay__content a {
-    font-family: "Poppins";
-    font-weight: 500;
-    font-size: 1.1em;
-    color: #ffffff;
-    text-decoration: none;
-  }
-  .nav__links {
-    list-style: none;
-    display: flex;
-  }
-  .nav__links li {
-    padding: 0px 30px;
-  }
-  .nav__links li a {
-    transition: color 0.2s ease 0s;
-  }
-  .nav__links li a:hover {
-    border-bottom: #ffffff solid 2px;
-  }
-  .cta {
-    padding: 9px 25px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease 0s;
-  }
-  .cta:hover {
-    background-color: #131313;
-    color: #ffffff;
-  }
-  .menu {
+}
+
+@media only screen and (max-width: 899px){
+  .nav__links,
+  .cta{
     display: none;
+    height: 40px;
   }
-  .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: #131313;
-    overflow-x: hidden;
-    transition: width 0.5s ease 0s;
+  .menu{
+    display: initial;
   }
-  .overlay--active {
-    width: 100%;
-  }
-  .overlay__content {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .overlay a {
-    padding: 15px;
-    font-size: 36px;
-    display: block;
-    transition: color 0.3s ease 0s;
-  }
-  .overlay a:hover,
-  .overlay a:focus {
-    color: #0088a9;
-  }
-  .overlay .close {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-    color: #edf0f1;
-  }
-  @media screen and (max-height: 450px) {
-    .overlay a {
-      font-size: 20px;
-    }
-    .overlay .close {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-    }
-  }
-  @media only screen and (max-width: 899px) {
-    .nav__links,
-    .cta {
-      display: none;
-      height: 40px;
-    }
-    .menu {
-      display: initial;
-    }
-  }
-  @media screen and (max-width: 420px){
-    .logo {
+}
+
+@media screen and (max-width: 420px){
+  .logo {
     height: 30px;
     cursor: pointer;
-    }
+  }
   .menu {
     display: initial;
     font-size: 14px;
@@ -129,19 +150,19 @@
     width: 60px;
   }
 }
-/**</HEADER>**/
 
+/* PART ACCUEIL */
 
-.h1_accueil{
-    color: #63ecb3;
-    text-align: center;
-    font-size: 7vw;
-    word-spacing: -5mm;
-    margin-top: 1em;
-    font-family: "Poppins";
+.title{
+  color: #17e76e;
+  text-align: center;
+  font-size: 7vw;
+  word-spacing: 0;
+  margin-top: 1em;
+  font-family: "Poppins";
 }
 
-.citation{
+.subtitle{
   color: #ffffff;
   text-align: center;
   font-size: 1vw;
@@ -191,74 +212,103 @@ a:link{
 
 /* Box */
 
-.section{
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #101010;
+
+.site-container {
+  margin: 2rem auto;
+  max-width: calc(100% - 80%);
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  gap: 2rem;
+}
+
+.article-image {
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 
-.card {
-  display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 210px 210px 80px;
-  grid-template-areas: "image" "text";
-
-  border-radius: 18px;
-  background: rgb(19, 19, 19);
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-  text-align: center;
+.article-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px 20px 0 0;
 }
 
-.card-image {
-  grid-area: image;
-  background: url("img1.jpg");
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-size: cover;
+.article-card {
+  background: white;
+  border-radius: 20px;
+  transition: 0.3s;
+  height: 500px;
+  width: 400px;
 }
 
-.card-text {
-  grid-area: text;
-  margin: 25px;
+.article-card:hover {
+  box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
+  cursor: pointer;
 }
 
-.card-text .date {
-  color: rgb(255, 7, 110);
-  font-size:13px;
+.article-content {
+  padding: 2rem;
 }
 
-.card-text p {
-  color: grey;
-  font-size:15px;
-  font-weight: 300;
+.article-content .card-category {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: #6b82a7;
+  display: block;
+  text-decoration: none;
 }
 
-.card-text h2 {
-  margin-top:0px;
-  font-size:28px;
+.article-content .card-title {
+  margin: 1rem 0;
+  color: #22447b;
+}
+
+.article-content .card-except {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #6b82a7;
+  margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .site-container {
+    max-width: 608px;
+  }
+  .article-card {
+    display: grid;
+    grid-template-rows: 220px 1fr;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .site-container {
+    max-width: 1156px;
+  }
 }
 
 /* Footer */
 
 .footer{
+  margin-top: 20em;
   padding: 40px 0;
-  background-color: #ffffff;
+  background-color: #06080a;
 }
 
 .footer .social{
   text-align: center;
   padding-bottom: 25px;
-  color: #4b4c4d;
+  color: #cccccc;
 }
 
 .footer .social a{
   font-size: 24px;
   color: inherit;
-  border: 1px solid #cccccc;
+  border: 1px solid #3f3f3f;
   width: 40px;
   height: 40px;
   line-height: 38px;
@@ -292,10 +342,12 @@ a:link{
 .footer ul li{
   display: inline-block;
   padding: 0 15px;
+  color: #cccccc;
 }
 
 .footer ul li a:hover{
   opacity: 1;
+  color: #ffffff;
 }
 
 .footer .copyright{
